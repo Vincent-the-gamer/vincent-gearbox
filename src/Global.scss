@@ -1,4 +1,11 @@
-// 全局样式
+/**
+* 全局样式
+*/
 a{
     text-decoration: none;
+}
+
+// body颜色的过渡
+:global(body) {
+    transition: background-color 0.5s;
 }

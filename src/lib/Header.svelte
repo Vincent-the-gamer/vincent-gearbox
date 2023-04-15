@@ -7,7 +7,6 @@
         <ul>
             <li>工具分类</li>
             <li>
-                切换主题：
                 <input type="checkbox" 
                        value={ $theme === 1 }
                        on:change={ switchTheme }/>
@@ -36,6 +35,9 @@ function switchTheme(){
 </script>
 
 <style lang="scss">
+    header{
+        transition: background-color 0.5s;
+    }
     header.light{
         position: fixed;
         left: 0;
@@ -67,7 +69,7 @@ function switchTheme(){
         .right{
             position: absolute;
             right: 0;
-            top: 0;
+            bottom: 15px;
             display: inline;
             height: 100%;
             ul{
@@ -132,7 +134,7 @@ function switchTheme(){
         .right{
             position: absolute;
             right: 0;
-            top: 0;
+            bottom: 15px;
             display: inline;
             height: 100%;
             ul{
@@ -164,6 +166,42 @@ function switchTheme(){
                     }
                 }
             }
+        }     
+    }
+
+    input[type="checkbox"] {
+        transform: scale(60%, 60%) translateY(10px);
+        position: relative;
+        border: 0;
+        appearance: none;
+        background: #6e6e6e;
+        outline: none;
+        width: 80px;
+        height: 30px;
+        border-radius: 20px;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+            0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        &::before{
+            content: "";
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            top: 0;
+            left: 0;
+            background-color: #000000;
+            transform: scale(1.1);
+            border-radius: 20px;
+            transition: 750ms ease all;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+                0 2px 4px -1px rgba(0, 0, 0, 0.06);
         }
     }
+    input:checked[type="checkbox"]{
+        background-color: rgb(240, 240, 240);
+        &::before{
+            background-color: #d900ff;
+            left: 52px;
+        }
+    }
+    
 </style>
