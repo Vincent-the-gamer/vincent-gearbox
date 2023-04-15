@@ -1,9 +1,11 @@
+<Header/>
 <!-- 注册路由 -->
 <Router {routes}/>
 
 
 <script lang="ts">
   import Router from "svelte-spa-router";
+  import Header from "@/lib/Header.svelte";
   import routes from "@/routes";
   import { theme } from "@/store/themeStore"
   import { onMount } from "svelte";

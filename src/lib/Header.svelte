@@ -11,10 +11,12 @@
                        value={ $theme === 1 }
                        on:change={ switchTheme }/>
             </li>
-            <li>
-                <img src={ GitHubLogo } alt="github"/>
+            <li>    
                 <a href="https://github.com/Vincent-the-gamer"
-                   target="_blank">GitHub</a>
+                   target="_blank">
+                   <img src={ GitHubLogo } alt="github"/>
+                   <span>GitHub</span>
+                </a>
             </li>
         </ul>
     </div>
@@ -35,6 +37,15 @@ function switchTheme(){
 </script>
 
 <style lang="scss">
+    @media (max-width: 500px){
+        header{
+            a{
+                span{
+                    display: none;
+                }
+            }
+        }
+    }
     header{
         transition: background-color 0.5s;
         position: fixed;
@@ -120,8 +131,8 @@ function switchTheme(){
         }
 
         &.dark{
-            box-shadow: 0 0 20px rgb(171, 171, 171);
-            background-color: black;
+            box-shadow: 0 0 20px rgb(0, 0, 0);
+            background-color: rgb(41, 41, 41);
             border-bottom: 1px solid rgba(107, 107, 107, 0.733);
             .left{
                 h3{
@@ -153,13 +164,13 @@ function switchTheme(){
     
 
     input[type="checkbox"] {
-        transform: scale(60%, 60%) translateY(10px);
+        transform: scale(58%, 58%) translateY(13px);
         position: relative;
         border: 0;
         appearance: none;
         background: #6e6e6e;
         outline: none;
-        width: 80px;
+        width: 70px;
         height: 30px;
         border-radius: 20px;
         box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
@@ -186,7 +197,7 @@ function switchTheme(){
         background-color: rgb(240, 240, 240);
         &::before{
             background-color: #d900ff;
-            left: 52px;
+            left: 40px;
         }
     }
     
