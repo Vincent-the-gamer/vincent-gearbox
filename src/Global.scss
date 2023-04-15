@@ -1,11 +1,19 @@
 /**
 * 全局样式
 */
+// 注册字体
+@font-face {
+    font-family: LXGW WenKai;
+    src: url("@/assets/fonts/LXGWWenKai-Regular.ttf");
+}
+
 a{
     text-decoration: none;
 }
 
-// body颜色的过渡
-:global(body) {
+body {
+    // 主题颜色的过渡
     transition: background-color 0.5s;
+    font-family: LXGW WenKai;
 }
+

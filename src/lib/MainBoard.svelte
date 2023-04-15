@@ -19,36 +19,27 @@
         width: 100%;
         height: 400px;
         top: 70px;
-        .title.light{
+        .title{
+            h1{
+              transform: scale(110%, 110%);
+            }
+            h4{
+              font-size: 18px;
+            }
+            h1, h4{
+                width: fit-content;
+                margin: 0 auto;
+            }
             position: absolute;
             top: calc(50% - 60px);
             right: 45px;
             width: fit-content;
             margin: 0 auto;
             padding: 30px;
-            h1{
-              transform: scale(110%, 110%);
-            }
-            h1, h4{
-                width: fit-content;
-                margin: 0 auto;
+            &.dark{
+              color: white;
             }
         }
-        .title.dark{
-            color: white;
-            position: absolute;
-            top: calc(50% - 60px);
-            right: 45px;
-            width: fit-content;
-            margin: 0 auto;
-            padding: 30px;
-            h1{
-              transform: scale(110%, 110%);
-            }
-            h1, h4{
-                width: fit-content;
-                margin: 0 auto;
-            }
-        }
+        
     }
 </style>

@@ -37,16 +37,12 @@ function switchTheme(){
 <style lang="scss">
     header{
         transition: background-color 0.5s;
-    }
-    header.light{
         position: fixed;
         left: 0;
         top: 0;
         width: 100%;
-        background-color: white;
         height: 70px;
         z-index: 2;
-        border-bottom: 1px solid rgba(107, 107, 107, 0.733);
         .left{
             position: relative;
             left: 0;
@@ -64,6 +60,7 @@ function switchTheme(){
                 margin: 0;
                 color: black;
                 width: fit-content;
+                font-size: 20px;
             }
         }
         .right{
@@ -76,98 +73,84 @@ function switchTheme(){
                 padding: 1px;
                 width: fit-content;
                 li{
-                    $normal-color: black;
+                    transition: color, 0.3s;
                     position: relative;
-                    color: $normal-color;
+                    font-size: 18px;
                     top: 5px;
                     margin-right: 20px;
                     display: inline;
-                    border-bottom: 2px solid $normal-color;
-                    transition: color, 0.3s;
                     img{
                         height: 20px;
                     }
-                    a{
-                        color: $normal-color;
-                    }
                     &:hover{
-                        $hover-color: rgb(255, 71, 255);
                         cursor: pointer;
-                        color: $hover-color;
-                        border-bottom: 2px solid $hover-color;
-                        a{
-                            color: $hover-color;
-                        }
                     }
                 }
             }
         }
-    }
-    header.dark{
-        position: fixed;
-        left: 0;
-        top: 0;
-        width: 100%;
-        background-color: black;
-        height: 70px;
-        z-index: 2;
-        border-bottom: 1px solid rgba(107, 107, 107, 0.733);
-        .left{
-            position: relative;
-            left: 0;
-            height: 100%;
-            width: fit-content;
-            img{
-                top: 8px;
-                position: relative;
-                height: 80%;
+        &.light{
+            box-shadow: 0 0 20px grey;     
+            background-color: white;
+            border-bottom: 1px solid rgba(107, 107, 107, 0.733);
+            .left{
+                h3{
+                    color: black;
+                }
             }
-            h3{
-                position: relative;
-                display: inline;
-                top: -14px;
-                margin: 0;
-                color: white;
-                width: fit-content;
+            .right{
+                ul{
+                    li{
+                        $normal-color: black;
+                        color: $normal-color;
+                        border-bottom: 2px solid $normal-color;
+                        a{
+                            color: $normal-color;
+                        }
+                        &:hover{
+                            $hover-color: rgb(255, 71, 255);
+                            color: $hover-color;
+                            border-bottom: 2px solid $hover-color;
+                            a{
+                                color: $hover-color;
+                            }
+                        }
+                    }
+                } 
             }
         }
-        .right{
-            position: absolute;
-            right: 0;
-            bottom: 15px;
-            display: inline;
-            height: 100%;
-            ul{
-                padding: 1px;
-                width: fit-content;
-                li{
-                    $normal-color: white;
-                    color: $normal-color;
-                    position: relative;
-                    top: 5px;
-                    margin-right: 20px;
-                    display: inline;
-                    border-bottom: 2px solid $normal-color;
-                    transition: color, 0.3s;
-                    img{
-                        height: 20px;
-                    }
-                    a{
+
+        &.dark{
+            box-shadow: 0 0 20px rgb(171, 171, 171);
+            background-color: black;
+            border-bottom: 1px solid rgba(107, 107, 107, 0.733);
+            .left{
+                h3{
+                    color: white;
+                }
+            }
+            .right{
+                ul{
+                    li{
+                        $normal-color: white;
                         color: $normal-color;
-                    }
-                    &:hover{
-                        $hover-color: rgb(255, 71, 255);
-                        cursor: pointer;
-                        color: $hover-color;
-                        border-bottom: 2px solid $hover-color;
+                        border-bottom: 2px solid $normal-color;
                         a{
+                            color: $normal-color;
+                        }
+                        &:hover{
+                            $hover-color: rgb(255, 71, 255);
                             color: $hover-color;
+                            border-bottom: 2px solid $hover-color;
+                            a{
+                                color: $hover-color;
+                            }
                         }
                     }
                 }
-            }
-        }     
+            }     
+        }
     }
+    
 
     input[type="checkbox"] {
         transform: scale(60%, 60%) translateY(10px);
@@ -194,6 +177,9 @@ function switchTheme(){
             transition: 750ms ease all;
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
                 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+        &:hover{
+            cursor: pointer;
         }
     }
     input:checked[type="checkbox"]{
