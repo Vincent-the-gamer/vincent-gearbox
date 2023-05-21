@@ -5,7 +5,7 @@
     </div>
     <div class="right">
         <ul>
-            <li>工具分类</li>
+            <!-- <li>工具分类</li> -->
             <li>
                 <input type="checkbox" 
                        value={ $theme === 1 }

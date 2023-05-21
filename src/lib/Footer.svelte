@@ -1,6 +1,6 @@
 <footer class="{ $theme === 1 ? "light" : "dark"}">
   <p>@Copyright 2023-Present Vincent-the-gamer(诡锋)</p>
-  <p>MIT Licensed</p>
+  <p>Page not final.</p>
 </footer>
 
 <script lang="ts">
