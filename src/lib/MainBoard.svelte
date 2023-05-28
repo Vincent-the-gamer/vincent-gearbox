@@ -22,7 +22,7 @@
         background-size: cover;
         transition: background-image 0.5s;
         &.light{
-          background-image: url("@/assets/imgs/banner-light.png");
+          background-image: url("@/assets/imgs/banner-light.jpg");
         }
         &.dark{
           background-image: url("@/assets/imgs/banner-dark.jpg");
