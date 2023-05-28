@@ -7,6 +7,7 @@
                     <h1>PicDiet 在线图片压缩</h1>
                     <img src={ picDietImg } alt="logo"/>
                     <p>不需要后端，在前端使用JavaScript算法进行图片压缩的工具</p>
+                    <p>{"(本站封面图使用该工具压缩)"}</p>
                 </a>
             </div>
         </div>
