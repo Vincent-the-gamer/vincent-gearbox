@@ -1,41 +1,30 @@
 <!-- 用来装小盒子的大盒子 -->
 <div class="container">
     <div class="item-list {$theme === 1 ? "light" : "dark"}">
-        <div class="item">
-            <div class="content">
-                <a href="https://vincent-the-gamer.github.io/Picdiet" target="_blank">
-                    <h1>PicDiet 在线图片压缩</h1>
-                    <img src={ picDietImg } alt="logo"/>
-                    <p>不需要后端，在前端使用JavaScript算法进行图片压缩的工具</p>
-                    <p>{"(本站封面图使用该工具压缩)"}</p>
-                </a>
+        {#each itemList as item}
+            <div class="item">
+                <div class="content">
+                    {#if item.link !== ""}
+                        <a href="{ item.link }" target="_blank">
+                            <h1>{ item.title }</h1>
+                            <img src={ item.pic } alt="logo"/>
+                            <p>{ item.description }</p>
+                        </a>
+                        {:else}
+                        <h1>{ item.title }</h1>
+                        <img src={ item.pic } alt="logo"/>
+                        <p>{ item.description }</p>
+                    {/if}
+                </div>
             </div>
-        </div>
-        <div class="item">
-            <div class="content">
-                <a href="https://github.com/Vincent-the-gamer/audio-tools" target="_blank">
-                    <h1>.ncm音频转.mp3音频</h1>
-                    <img src={ ncm2mp3Img } alt="logo"/>
-                    <p>目前，网易云音乐下载的音乐都是.ncm格式，咱想转一下</p>
-                    <p>该工具需要手动拉取代码运行</p>
-                </a>
-            </div>
-        </div>
-        <div class="item">
-            <div class="content">
-                <h1>更多工具待续..</h1>
-                <img src={testImg} alt="测试"/>
-                <p>慢慢摸吧</p>
-            </div>
-        </div>
+        {/each}
     </div>
 </div>
 
 <script lang="ts">
     import { theme } from "@/store/themeStore";
-    import testImg from "@/assets/imgs/test.png"
-    import picDietImg from "@/assets/imgs/picdiet.png"
-    import ncm2mp3Img from "@/assets/imgs/ncm2mp3.jpg"
+    import itemList from "@/utils/itemList"
+
 </script>
 
 <style lang="scss">
@@ -55,6 +44,7 @@
             margin: 0 auto;
             display: flex;
             flex-direction: row;
+            justify-content: center;
             flex-wrap: wrap;
             .item{
                 width: 300px;
